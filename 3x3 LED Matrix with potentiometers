@@ -1,0 +1,58 @@
+int potPin1 = A1;  
+int potPin2 = A0; // Potentiometer input
+int led11 = 0;       // RGB LED Red pin
+int led12 = 1;    // RGB LED Green pin
+int led13 = 2;     // RGB LED Blue pin
+int led21=3;
+  int led22=4;
+  int led23=5;
+  int led31=6;
+  int led32=7;
+  int led33=8;
+void setup() {
+  pinMode(led11, OUTPUT);
+  pinMode(led13,OUTPUT);
+   pinMode(led12, OUTPUT);
+   pinMode(led21, OUTPUT);
+   pinMode(led22, OUTPUT);
+   pinMode(led23, OUTPUT);
+   pinMode(led31, OUTPUT);
+   pinMode(led32, OUTPUT);
+   pinMode(led33, OUTPUT);
+}
+
+void loop() {
+  int potValue1 = analogRead(potPin1);   // Reads 0–1023
+  int angle1 = map(potValue1, 0, 1023, 0, 270); // Convert to 0–270°
+  int potValue2 = analogRead(potPin2);   // Reads 0–1023
+  int angle2 = map(potValue2, 0, 1023, 0, 270);
+  // Turn off all first
+  digitalWrite(led11, LOW);
+digitalWrite(led12, LOW);
+  digitalWrite(led13, LOW);
+  digitalWrite(led31, LOW);
+  digitalWrite(led32, LOW);
+  digitalWrite(led33, LOW);
+  digitalWrite(led21, LOW);
+    digitalWrite(led22, LOW);
+digitalWrite(led23, LOW);
+
+  if ((angle1 >= 0) && (angle1 < 90) && (angle2>=0) && (angle2<90)) {
+    digitalWrite(led11, HIGH);  } 
+  else if ((angle1 >= 90) && (angle1 < 180) && (angle2>=0) && (angle2<90)) {
+    digitalWrite(led21, HIGH);  }
+else if ((angle1 >= 180) && (angle1 <= 270) && (angle2>=0) && (angle2<90)) {
+  digitalWrite(led31, HIGH);  }
+else if ((angle1 >= 0) && (angle1 < 90) && (angle2>=90) && (angle2<180)) {
+  digitalWrite(led12, HIGH);  }
+else if ((angle1 >= 0) && (angle1 < 90) && (angle2>=180) && (angle2<=270)) {
+  digitalWrite(led13, HIGH);  }
+else if ((angle1 >= 90) && (angle1 < 180) && (angle2>=90) && (angle2<180)) {
+  digitalWrite(led22, HIGH);  }
+else if ((angle1 >= 90) && (angle1 < 180) && (angle2>=180) && (angle2<=270)) {
+  digitalWrite(led23, HIGH); } 
+else if ((angle1 >= 180) && (angle1 <= 270) && (angle2>=90) && (angle2<180)) {
+  digitalWrite(led32, HIGH);  }
+else if ((angle1 >= 180) && (angle1 <= 270) && (angle2>=180) && (angle2<=270)) {
+  digitalWrite(led33, HIGH);  }
+}
