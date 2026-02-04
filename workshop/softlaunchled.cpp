@@ -1,4 +1,5 @@
 //when we click the button the led should be turned on untill the next button press
+//pin 4 is led, pin 6 is pushbutton
 
 int prevstate = HIGH;
 bool ledstate = false;
