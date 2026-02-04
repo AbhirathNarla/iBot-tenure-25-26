@@ -1,5 +1,5 @@
 // C++ code
-//
+//pin 3 is led
 int x=0,a=1;
 void setup()
 {
