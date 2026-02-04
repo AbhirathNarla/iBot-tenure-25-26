@@ -1,6 +1,6 @@
 // C++ code
 //
-pinldr = 6
+//pinldr = 6
 void setup()
 {
   pinMode(6, INPUT);
