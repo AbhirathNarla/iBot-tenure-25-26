@@ -1,0 +1,20 @@
+#include <Arduino.h>
+int last = 0;
+int brightness = 0;
+int fade = 5;
+void setup() {
+ pinMode(2, OUTPUT);
+ ledcSetup(0,5000, 8);
+ ledcAttachPin(2,0);
+}
+
+void loop() {
+  int time = millis();
+  
+  if(time-last<15) return;
+  ledcWrite(0, brightness);
+  if(brightness == 0) fade = 5;
+  if(brightness == 255) fade = -5;
+  brightness += fade;
+  last = time;
+}
