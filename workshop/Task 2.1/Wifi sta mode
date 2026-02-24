@@ -20,9 +20,6 @@ void setup() {
   Serial.println("Connected to WiFi");
   Serial.print("IP Address: ");
   Serial.println(WiFi.localIP());
-  delay(2000);
-  WiFi.disconnect();
-  Serial.println("Disconnected from WiFi");
 }
 
 void loop() { 
