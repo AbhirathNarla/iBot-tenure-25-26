@@ -10,7 +10,7 @@ void setup() {
   WiFi.begin("SSID", "PASSWORD");
   int n = WiFi.scanNetworks();
   for(int i=0;i<n;i++){
-    Serial.println(Wifi.SSID(i));
+    Serial.println(WiFi.SSID(i));
   }
   Serial.print("Connecting to WiFi");
   while (WiFi.status() != WL_CONNECTED) {
@@ -21,7 +21,7 @@ void setup() {
   Serial.print("IP Address: ");
   Serial.println(WiFi.localIP());
   delay(2000);
-  Wifi.disconnect();
+  WiFi.disconnect();
   Serial.println("Disconnected from WiFi");
 }
 
