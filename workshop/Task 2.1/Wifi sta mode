@@ -6,7 +6,7 @@ char password[] = "abhirath2007";
 
 void setup() {
   Serial.begin(115200);
-  Wifi.mode(WIFI_STA);
+  WiFi.mode(WIFI_STA);
   WiFi.begin("SSID", "PASSWORD");
   int n = Wifi.scanNetworks();
   for(int i=0;i<n;i++){
